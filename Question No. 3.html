@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Do the following programs in arrow functions
+
+        // Q.1 Print odd numbers in an array
+
+        let oddnum = (arr1) =>
+            {
+                for(let n=0; n<10; n++)
+                    {
+                        if((arr1[n]%2)!=0)
+                            {
+                                console.log(arr1[n]);
+                            }
+                    }
+            }
+        oddnum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+
+        // Q.2 Convert all the strings to title caps in a string array
+
+        let titlecap = (arr2) =>
+            {
+                for(let n=0; n<4; n++)
+                    {
+                        console.log(arr2[n].split(" ").reduce( (s, c) => s +""+(c.charAt(0).toUpperCase() + c.slice(1) +" "), ''));
+                    }
+            }
+        titlecap(["rohit", "lokesh", "vishalM", "vishalP"]);
+
+
+        // Q.3 Sum of all numbers in an array
+
+        let arraysum = (arr3) =>
+            {
+                let sum=0;
+
+                for(let n=0; n<5; n++)
+                    {
+                        sum=sum+arr3[n];
+                    }
+                console.log(sum);
+            }
+        arraysum([10, 20, 30, 40, 50]);
+
+        // Q.4 Return all the prime numbers in an array
+
+        let primenum = (arr4) =>
+            {
+                let primeno = [];
+                    
+                    for(n=0; n<arr4.length; n++)
+                        {
+                            if(arr4[n]>1 && arr4[n]<=3)
+                                {
+                                    primeno.push(arr4[n]);
+                                }
+
+                            else if(arr4[n]>3)
+                                {
+                                    for(j=2; j<arr4[n]; j++)
+                                        {
+                                            if((arr4[n]%j)==0)
+                                                {
+                                                    break;
+                                                }
+
+                                            else
+                                                {
+                                                    primeno.push(arr4[n]);
+                                                    break;
+                                                }
+                                        }
+                                }
+                        }
+                console.log(primeno);
+            }
+        primenum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        
+        // Q 5. Return all the palindromes in an array
+
+        var main_array = [123,121,"rohit","rotor","jjmcoe","madam",111];
+        var Arrow_pali = (array)=>
+            {
+                var pali_arr = [];
+                array.forEach(element =>
+                    {
+                        if(typeof(element)==typeof(1))
+                            {
+                                var rem, temp, final = 0;
+                                temp = element;
+                                while(element>0)
+                                    {
+                                        rem = element%10;
+                                        element = parseInt(element/10);
+                                        final = final*10+rem;
+                                    }
+                                if(temp==final)
+                                    {
+                                        pali_arr.push(final);
+                                    }
+                            }
+                        else
+                            {
+                                if(element==element.split("").reverse().join(""))
+                                    {
+                                        pali_arr.push(element);
+                                    }
+                            }
+                    } 
+            );
+                console.log(`array of palindrom:- ${pali_arr}`)
+            };
+            Arrow_pali(main_array);
+
+    </script>
+</body>
+</html>
